@@ -29,12 +29,14 @@ const Checkbox = styled.input`
 const BrandFilter = ({ selectedBrands, setSelectedBrands }) => {
   const brands = [
     { name: "walton", count: 32 },
-    { name: "Foxecom", count: 1 },
-    { name: "Minimog", count: 1 },
-    { name: "Minimog Fashion Store", count: 1 },
-    { name: "Outwears", count: 5 },
-    { name: "Pants", count: 10 },
-    { name: "Shoes", count: 4 },
+    { name: "Local", count: 1 },
+    { name: "Vison", count: 1 },
+    { name: "Nike", count: 1 },
+    { name: "NatureFit", count: 5 },
+    { name: "ActiveEco", count: 10 },
+    { name: "ToolMaster", count: 4 },
+    { name: "ProCut", count: 4 },
+
   ];
 
   const handleCheckboxChange = (brandName) => {

@@ -28,11 +28,11 @@ const Checkbox = styled.input`
 
 const CategoriesFilter = ({ category, setCategory}) => {
   const categories = [
-    { name: "Electronics", count: 120 },
-    { name: "Clothing", count: 85 },
-    { name: "Books", count: 50 },
-    { name: "Home Appliances", count: 30 },
-    { name: "Toys", count: 20 },
+    { name: "Electronics", count: 20 },
+    { name: "Clothing", count: 5 },
+    { name: "Fitness", count: 5 },
+    { name: "Home & Kitchen", count: 3 },
+    { name: "Tools", count: 2},
   ];
 
   const handleCheckboxChange = (catName) => {

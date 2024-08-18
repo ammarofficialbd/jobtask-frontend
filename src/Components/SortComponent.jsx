@@ -9,7 +9,7 @@ const Select = styled.select`
   color: #333;
   background-color: #f9f9f9;
   width: 100%;
-  max-width: 200px;
+  max-width: 150px;
   cursor: pointer;
   transition: border-color 0.3s ease;
 
@@ -18,7 +18,7 @@ const Select = styled.select`
     outline: none;
   }
   @media (min-width: 768px) {
-    max-width: 300px; /* Increase max-width on larger screens */
+    max-width: 200px; /* Increase max-width on larger screens */
   }
 `;
 

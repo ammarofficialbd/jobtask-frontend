@@ -3,7 +3,7 @@ import React from 'react';
 const Card = ({name, image, price}) => {
   
   return (
-    <div className="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="w-full bg-white shadow-lg rounded-lg overflow-hidden lg:max-w-sm">
       <div className="relative">
         <img className="w-full h-48 object-cover" src={image} alt="Cotton bucket hat" />
         <span className="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full">New</span>

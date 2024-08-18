@@ -80,7 +80,7 @@ const PriceFilter = ({ minPrice, maxPrice, setMinPrice, setMaxPrice }) => {
             }}
           ></div>
         </div>
-        <div className="flex justify-between mt-4">
+        <div className="flex justify-between mt-4 items-center">
           <div className="flex items-center space-x-2">
             <span className="text-gray-600">$</span>
             <input
