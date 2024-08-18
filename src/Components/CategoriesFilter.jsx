@@ -35,6 +35,16 @@ const CategoriesFilter = ({ category, setCategory}) => {
     { name: "Toys", count: 20 },
   ];
 
+  const handleCheckboxChange = (catName) => {
+    if (category.includes(catName)) {
+      // Remove the brand from the selectedBrands array
+      setCategory(category.filter((cate) => cate !== catName));
+    } else {
+      // Add the brand to the selectedBrands array
+      setCategory([...category, catName]);
+    }
+  };
+
   return (
     <FilterContainer>
       <FilterTitle>Category</FilterTitle>
@@ -45,7 +55,7 @@ const CategoriesFilter = ({ category, setCategory}) => {
               <Checkbox
                 type="checkbox"
                 checked={category.includes(cat.name)}
-                onChange={() => setCategory(cat.name)}
+                onChange={() => handleCheckboxChange(cat.name)}
               />
               {cat.name} ({cat.count})
             </label>

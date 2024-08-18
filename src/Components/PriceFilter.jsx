@@ -1,8 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 
-const PriceFilter = () => {
-  const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(350);
+const PriceFilter = ({ minPrice, maxPrice, setMinPrice, setMaxPrice }) => {
   const minRef = useRef(null);
   const maxRef = useRef(null);
   const sliderRef = useRef(null);
@@ -11,6 +9,7 @@ const PriceFilter = () => {
   const maxRange = 350;
 
   const handleMinDrag = (e) => {
+    if (!sliderRef.current) return;
     const sliderRect = sliderRef.current.getBoundingClientRect();
     const newValue = Math.min(
       Math.max(minRange, ((e.clientX - sliderRect.left) / sliderRect.width) * maxRange),
@@ -20,6 +19,7 @@ const PriceFilter = () => {
   };
 
   const handleMaxDrag = (e) => {
+    if (!sliderRef.current) return;
     const sliderRect = sliderRef.current.getBoundingClientRect();
     const newValue = Math.max(
       Math.min(maxRange, ((e.clientX - sliderRect.left) / sliderRect.width) * maxRange),
@@ -32,7 +32,6 @@ const PriceFilter = () => {
     const handleMouseUp = () => {
       document.removeEventListener('mousemove', handleMinDrag);
       document.removeEventListener('mousemove', handleMaxDrag);
-      document.removeEventListener('mousemove', handleMinDrag);
     };
 
     document.addEventListener('mouseup', handleMouseUp);
@@ -65,7 +64,7 @@ const PriceFilter = () => {
           <div
             ref={minRef}
             onMouseDown={handleMinMouseDown}
-            className="absolute w-5 h-5 bg-black rounded-full cursor-pointer"
+            className="absolute w-5 h-5 bg-black rounded-full cursor-pointer -top-2"
             style={{
               left: `${(minPrice / maxRange) * 100}%`,
               transform: 'translateX(-50%)',
@@ -74,7 +73,7 @@ const PriceFilter = () => {
           <div
             ref={maxRef}
             onMouseDown={handleMaxMouseDown}
-            className="absolute w-5 h-5 bg-black rounded-full cursor-pointer"
+            className="absolute w-5 h-5 bg-black rounded-full cursor-pointer -top-2"
             style={{
               left: `${(maxPrice / maxRange) * 100}%`,
               transform: 'translateX(-50%)',

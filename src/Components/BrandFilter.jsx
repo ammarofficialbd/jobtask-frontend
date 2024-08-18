@@ -26,11 +26,9 @@ const Checkbox = styled.input`
   margin-right: 10px;
 `;
 
-const BrandFilter = ({selectedBrands, setSelectedBrands }) => {
-
-
+const BrandFilter = ({ selectedBrands, setSelectedBrands }) => {
   const brands = [
-    { name: "Bags", count: 32 },
+    { name: "walton", count: 32 },
     { name: "Foxecom", count: 1 },
     { name: "Minimog", count: 1 },
     { name: "Minimog Fashion Store", count: 1 },
@@ -39,6 +37,15 @@ const BrandFilter = ({selectedBrands, setSelectedBrands }) => {
     { name: "Shoes", count: 4 },
   ];
 
+  const handleCheckboxChange = (brandName) => {
+    if (selectedBrands.includes(brandName)) {
+      // Remove the brand from the selectedBrands array
+      setSelectedBrands(selectedBrands.filter((brand) => brand !== brandName));
+    } else {
+      // Add the brand to the selectedBrands array
+      setSelectedBrands([...selectedBrands, brandName]);
+    }
+  };
 
   return (
     <FilterContainer>
@@ -50,7 +57,7 @@ const BrandFilter = ({selectedBrands, setSelectedBrands }) => {
               <Checkbox
                 type="checkbox"
                 checked={selectedBrands.includes(brand.name)}
-                onChange={() => setSelectedBrands(brand.name)}
+                onChange={() => handleCheckboxChange(brand.name)}
               />
               {brand.name} ({brand.count})
             </label>
