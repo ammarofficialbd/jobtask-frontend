@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase';
 import { setUser, clearUser, selectUser } from './features/authSlice';
-import Login from './Pages/Login';
 import AppRoutes from './routes/index';
+import Signup from './Pages/Signup';
 
 function App() {
   const dispatch = useDispatch();
@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      {!user ? <Login /> : <AppRoutes />}
+      {!user ? <Signup /> : <AppRoutes />}
     </div>
   );
 }

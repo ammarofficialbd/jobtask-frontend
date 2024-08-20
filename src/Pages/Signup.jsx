@@ -6,7 +6,7 @@ import { signInWithPopup } from 'firebase/auth';
 import { setUser } from '../features/authSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-const Login = () => {
+const Signup = () => {
   const dispatch = useDispatch();
   const [isSignUp, setIsSignUp] = useState(true);
 
@@ -103,4 +103,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;

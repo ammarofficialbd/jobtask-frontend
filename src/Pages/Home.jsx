@@ -36,7 +36,7 @@ function Home() {
       try {
         setLoading(true);
         const response = await axios.get(
-          "https://products-backend-pi.vercel.app/api/v1/products",
+          "https://backend-pro-ochre.vercel.app/api/v1/products",
           {
             params: {
               page,
